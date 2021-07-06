@@ -36,7 +36,11 @@ function playRound(playerSelection, computerSelection){
 function game(){
     let playerSelection;
     let computerSelection;
-    let qtdPartidas = parseInt(prompt('Insira a quantidade de partidas que deseja jogar: '))
+    console.log('########## Welcome to Rock-Paper-Scissors Game! ##########')
+    let qtdPartidas = parseInt(prompt('Type the number of matches: '))
+    if (qtdPartidas <= 0){
+        return 'You don´t wanna play!'
+    }
     for (let i = 0; i < qtdPartidas; i++){
         computerSelection = computerPlay();
         playerSelection = prompt("Type: Rock, Paper or Scissors: ")
