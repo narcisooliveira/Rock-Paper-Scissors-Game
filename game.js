@@ -53,4 +53,4 @@ function game(){
     }else 
         console.log('Draw game: '+human+"-"+machine)
 }
-console.log(game())
+game()
