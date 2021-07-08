@@ -26,10 +26,12 @@ function playRound(playerSelection, computerSelection){
         return "You win! Rock beats Scissors" 
     }else if (word === 'Paper' && computerSelection === 'Scissors'){
         machine++;
-        return "You lose! Scissors beats Paper" 
-    }else {
+        return "You lose! Scissors beats Paper"
+    }else if (word === 'Scissors' && computerSelection === 'Paper'){
         human++;
-        return "You win! Scissors beats Paper"
+        return "You win! Scissors beats Paper"  
+    }else {
+        return "Draw game!"
         }
 }
 
@@ -39,7 +41,7 @@ function game(){
     console.log('########## Welcome to Rock-Paper-Scissors Game! ##########')
     let qtdPartidas = parseInt(prompt('Type the number of matches: '))
     if (qtdPartidas <= 0){
-        return 'You don´t wanna play!'
+       return console.log('You don´t wanna play!')
     }
     for (let i = 0; i < qtdPartidas; i++){
         computerSelection = computerPlay();
@@ -47,10 +49,10 @@ function game(){
         console.log(playRound(playerSelection, computerSelection));
     }
     if (human > machine){
-        console.log('The winner is human: '+human+"-"+machine)
+        return console.log('The winner is human: '+human+"-"+machine)
     }else if (human < machine){
-        console.log('The winner is machine: '+machine+"-"+human)
+        return console.log('The winner is machine: '+machine+"-"+human)
     }else 
-        console.log('Draw game: '+human+"-"+machine)
+        return console.log('Draw game: '+human+"-"+machine)
 }
 game()
