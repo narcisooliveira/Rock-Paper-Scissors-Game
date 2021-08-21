@@ -1,0 +1,21 @@
+{
+  "name": "Rock-Paper-Scissors-Game",
+  "version": "1.0.0",
+  "description": "** Learning javascript with an simple game! **",
+  "main": "game.js",
+  "type": "module",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/narcisooliveira/Rock-Paper-Scissors-Game.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/narcisooliveira/Rock-Paper-Scissors-Game/issues"
+  },
+  "homepage": "https://github.com/narcisooliveira/Rock-Paper-Scissors-Game#readme"
+}

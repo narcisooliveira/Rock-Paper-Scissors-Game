@@ -1,39 +1,7 @@
-function computerPlay(){
-    var array = ['Rock', 'Paper', 'Scissors'];
-    let choose = Math.floor((Math.random() * 3));
-    return array[choose];
-}
+import pkg from 'prompt-sync';
+const prompt = pkg();
 
-const prompt = require('prompt-sync')({sigint:true})
-var human = 0;
-var machine = 0;
-
-function playRound(playerSelection, computerSelection){
-    var word = playerSelection;
-    word = word.toLowerCase()
-    word = word.charAt(0).toUpperCase() + word.slice(1)
-    if (word === 'Rock' && computerSelection === 'Paper'){
-        machine++;
-        return "You lose! Paper beats Rock" 
-    }else if (word === 'Paper' && computerSelection === 'Rock'){
-        human++;
-        return "You win! Paper beats Rock"
-    }else if (word === 'Scissors' && computerSelection === 'Rock'){
-        machine++;
-        return "You lose! Rock beats Scissors" 
-    }else if (word === 'Rock' && computerSelection === 'Scissors'){
-        human++;
-        return "You win! Rock beats Scissors" 
-    }else if (word === 'Paper' && computerSelection === 'Scissors'){
-        machine++;
-        return "You lose! Scissors beats Paper"
-    }else if (word === 'Scissors' && computerSelection === 'Paper'){
-        human++;
-        return "You win! Scissors beats Paper"  
-    }else {
-        return "Draw game!"
-        }
-}
+import { playRound, computerPlay, placar } from './playGame.js'
 
 function game(){
     let playerSelection;
@@ -48,11 +16,6 @@ function game(){
         playerSelection = prompt("Type: Rock, Paper or Scissors: ")
         console.log(playRound(playerSelection, computerSelection));
     }
-    if (human > machine){
-        return console.log('The winner is human: '+human+"-"+machine)
-    }else if (human < machine){
-        return console.log('The winner is machine: '+machine+"-"+human)
-    }else 
-        return console.log('Draw game: '+human+"-"+machine)
+    placar()
 }
 game()
